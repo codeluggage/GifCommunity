@@ -32,7 +32,7 @@ const Layout = ({children}) =>
 
   <div className="wrapper" id="wrapper">
 
-    <Helmet title="Vulcanstagram" link={links} />
+    <Helmet title="GifCommunity" link={links} />
     
     <link  />
     
@@ -44,7 +44,7 @@ const Layout = ({children}) =>
 
     </div>
   
-    <div className="footer">&copy; Vulcanstagram</div>
+    <div className="footer">&copy; GifCommunity</div>
 
   </div>
 

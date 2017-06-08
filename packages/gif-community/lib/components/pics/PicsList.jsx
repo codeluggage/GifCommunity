@@ -10,6 +10,7 @@ import { Components, withList, withCurrentUser, Loading } from 'meteor/vulcan:co
 
 import Pics from '../../modules/pics/collection.js';
 import PicsItem from './PicsItem.jsx';
+import CommentsList from '../comments/CommentsList.jsx';
 
 const PicsList = ({results = [], currentUser, loading, loadMore, count, totalCount}) => 
   
@@ -22,7 +23,17 @@ const PicsList = ({results = [], currentUser, loading, loadMore, count, totalCou
       <div className="pics-list-content">
 
         <div className="pics-list-grid">
-          {results.map(pic => <PicsItem key={pic._id} pic={pic} currentUser={currentUser} />)}
+          {results.map(pic =>
+            <div key={pic._id}>
+              <PicsItem pic={pic} currentUser={currentUser} />
+              <div className="pics-details-sidebar">
+                <CommentsList terms={{
+                  view: 'picComments',
+                  picId: pic._id
+                }} />
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="pics-list-footer">

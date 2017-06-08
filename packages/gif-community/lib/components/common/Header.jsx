@@ -3,7 +3,7 @@
 The Header component.
 
 Components.ModalTrigger is a built-in Vulcan component that displays
-its children in a popup triggered by either a text link, or a cusotm
+its children in a popup triggered by either a text link, or a custom
 component (if the "component" prop is specified).
 
 */
@@ -59,7 +59,7 @@ const Header = ({currentUser}) =>
     <div className="header">
       
       <h1 className="logo">
-        <img src="/packages/example-instagram/lib/static/vulcanstagram.png" alt="Vulcanstagram"/>
+        <img src="/packages/example-instagram/lib/static/GifCommunity.png" alt="GifCommunity"/>
       </h1>
 
       {currentUser ? 

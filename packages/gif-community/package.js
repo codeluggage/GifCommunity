@@ -22,7 +22,7 @@ Package.onUse(function (api) {
   api.addFiles('lib/stylesheets/style.scss');
 
   api.addAssets([
-    'lib/static/vulcanstagram.png'
+    'lib/static/GifCommunity.png'
   ], ['client']);
 
   api.mainModule('lib/server/main.js', 'server');
