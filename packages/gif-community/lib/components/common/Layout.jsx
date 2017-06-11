@@ -11,7 +11,6 @@ Note: the Helmet library is used to insert meta tags and link tags in the <head>
 
 import React, { PropTypes, Component } from 'react';
 import Helmet from 'react-helmet';
-import Header from './Header.jsx';
 
 const links = [
   // note: modal popups won't work with anything above alpha.5. 
@@ -36,8 +35,6 @@ const Layout = ({children}) =>
     
     <link  />
     
-    <Header/>
-  
     <div className="main">
 
       {children}

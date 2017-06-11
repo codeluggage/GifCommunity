@@ -11,6 +11,7 @@ import { Components, withList, withCurrentUser, Loading } from 'meteor/vulcan:co
 import Pics from '../../modules/pics/collection.js';
 import PicsItem from './PicsItem.jsx';
 import CommentsList from '../comments/CommentsList.jsx';
+import Header from '../common/Header.jsx'
 
 const PicsList = ({results = [], currentUser, loading, loadMore, count, totalCount}) => 
   
@@ -21,6 +22,7 @@ const PicsList = ({results = [], currentUser, loading, loadMore, count, totalCou
       <Loading /> :
 
       <div className="pics-list-content">
+        <Header />
 
         <div className="pics-list-grid">
           {results.map(pic =>
