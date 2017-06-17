@@ -6,42 +6,37 @@ import PicsList from './pics/PicsList.jsx';
 
 // navigation bar component when the user is logged out
 
-const NavLoggedOut = ({currentUser}) =>
+const NavLoggedOut = ({currentUser}) => (
 
-  <div className="header-nav header-logged-out">
-    
-      <Components.ModalTrigger label="Sign Up/Log In" size="small">
-        <Components.AccountsLoginForm />
-      </Components.ModalTrigger>
+  <div className="header-logged-out" style={{
+      display: 'flex',
+      justifyContent: 'center',
+  }}>
 
-  </div>
+    <div style={{
+      marginTop: '20px',
+    }}>
 
-const NavLoggedIn = ({currentUser}) =>
-
-  <div className="header-nav header-logged-in">
-    
-      <div className="header-accounts">
-
-        Welcome!&nbsp;
-        <a href="/gifs">Continue</a>
-        
-        <Components.ModalTrigger label={Users.getDisplayName(currentUser)} size="small">
-          <div>
-            {Users.isAdmin(currentUser) ? <p>Admin</p> : null}
-            <Components.AccountsLoginForm />
-          </div>
-        </Components.ModalTrigger>
-
+      <div style={{
+        marginBottom: '20px',
+      }}>
+        Welcome to ShortcutMagic! Please log in or sign up: 
       </div>
 
-      <Components.ModalTrigger label="Upload">
-        <PicsNewForm />
-      </Components.ModalTrigger>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center'
+      }}>
+        <Components.AccountsLoginForm />
+      </div>
+
+    </div>
 
   </div>
 
+);
 
-const LoginPage = ({ currentUser, loading }) => 
+const LoginPage = ({ currentUser, loading }) => (
   
   <div className="login-page">
 
@@ -55,8 +50,8 @@ const LoginPage = ({ currentUser, loading }) =>
 
           <PicsList currentUser={currentUser}/> : 
 
-          <NavLoggedOut currentUser={currentUser}/>
-          
+          <NavLoggedOut />
+
         }
 
       </div>
@@ -64,5 +59,7 @@ const LoginPage = ({ currentUser, loading }) =>
     }
 
   </div>
+
+);
 
 export default withCurrentUser(LoginPage);
