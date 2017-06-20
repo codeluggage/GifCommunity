@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'example-instagram',
+  name: 'gif-community',
 });
 
 Package.onUse(function (api) {

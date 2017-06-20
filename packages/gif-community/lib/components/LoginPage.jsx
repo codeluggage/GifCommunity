@@ -20,14 +20,18 @@ const NavLoggedOut = ({currentUser}) => (
       <div style={{
         marginBottom: '20px',
       }}>
-        Welcome to ShortcutMagic! Please log in or sign up: 
+
+        Log in or create an account:
+
       </div>
 
       <div style={{
         display: 'flex',
         justifyContent: 'center'
       }}>
+
         <Components.AccountsLoginForm />
+        
       </div>
 
     </div>

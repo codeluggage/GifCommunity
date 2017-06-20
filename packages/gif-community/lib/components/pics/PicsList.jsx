@@ -40,8 +40,10 @@ const PicsList = ({results = [], currentUser, loading, loadMore, count, totalCou
 
         <div className="pics-list-footer">
           {totalCount > results.length ?
-            <a className="load-more" href="#" onClick={e => {e.preventDefault(); loadMore();}}>Load More ({count}/{totalCount})</a> : 
-            <p className="no-more">No more items.</p>
+            <a className="load-more" href="#" onClick={e => {
+              e.preventDefault();
+              loadMore();
+            }}>Load More ({totalCount - count} left)</a> : <p className="no-more">No more gifs :( Why not make some?</p>
           }
         </div>
         

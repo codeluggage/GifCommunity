@@ -59,7 +59,7 @@ const Header = ({currentUser}) =>
     <div className="header">
       
       <h1 className="logo">
-        <img src="/packages/example-instagram/lib/static/GifCommunity.png" alt="GifCommunity"/>
+        <img src="/packages/gif-community/assets/wizard.png" alt="GifCommunity"/>
       </h1>
 
       {currentUser ? 
