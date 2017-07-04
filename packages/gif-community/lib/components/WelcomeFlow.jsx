@@ -14,7 +14,7 @@ const WelcomeFlow = ({results = [], currentUser, loading, loadMore, count, total
 
       <Loading /> :
       <div>
-        <h2>Getting ShortcutMagic installed and set up the way you like it</h2>
+        <h2>Let's Install ShortcutMagic</h2>
         <br />
         Installing ShortcutMagic is easy, but it requires administrative access. 
         <br />

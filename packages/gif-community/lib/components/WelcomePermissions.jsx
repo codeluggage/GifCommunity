@@ -43,18 +43,8 @@ const WelcomePermissions = ({results = [], currentUser, loading, loadMore, count
         <br />
         and to do all of that it needs administrative access. 
         <br />
-        Here is a gif that shows what will happen:
         <br />
-        <br />
-        <i>
-        Optional (advanced): 
-        <br />
-        By the way, the code that makes all this work is open and freely available.
-        <br />
-        Because of this, you can be certain that ShortcutMagic does not misuse the admin access.
-        <br />
-        <a target="_blank" href="https://github.com/codeluggage/ShortcutMagic">The code for ShortcutMagic - see how it all works!</a>
-        </i>
+        Here is a gif showing what will happen:
         <br />
         <img style={{
           width: '450px',
