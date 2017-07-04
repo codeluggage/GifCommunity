@@ -1,6 +1,5 @@
 import React from 'react';
 import { withCurrentUser, Loading } from 'meteor/vulcan:core';
-
 import Header from './common/Header.jsx'
 
         // <br />
@@ -17,31 +16,53 @@ import Header from './common/Header.jsx'
 // TODO: Decide if the app has been downloaded by checking the user agent
 const WelcomePermissions = ({results = [], currentUser, loading, loadMore, count, totalCount}) => 
   
-  <div className="welcome-permissions">
-
+  <div className="window-content" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    textAlign: 'center',
+  }}>
     {loading ? 
 
       <Loading /> :
 
-      <div className="welcome-permissions-content">
-
-        Now, ShortcutMagic needs access to learn shortcuts from your programs.
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignContent: 'center',
+        alignItems: 'center',
+      }}>
+        <h2>Administrative access</h2>
         <br />
-        This requires administrative access. This can sound scary, but it is just
+        ShortcutMagic works very closely with your computer. These kinds of programs are often 
         <br />
-        a few clicks to give ShortcutMagic access, and then we are done. 
+        called assistive access programs. They can control limited parts of the computer for you,
         <br />
-        <ul>
-          <li>Click the green button at the top of the screen</li>
-          <li>Allow access by entering your password</li>
-          <li>Wait for the ShortcutMagic window to finish loading shortcuts</li>
-        </ul>
+        like clicking buttons or typing by voice. ShortcutMagic interacts with your programs for you,
         <br />
-        By the way, the code that makes all this work is open and freely available,
+        and to do all of that it needs administrative access. 
         <br />
-        so ShortcutMagic is harmless and for everyone. 
+        Here is a gif that shows what will happen:
         <br />
-        <a href="https://github.com/codeluggage/ShortcutMagic">Advanced - Open a website with the code for ShortcutMagic to see how this works.</a>
+        <br />
+        <i>
+        Optional (advanced): 
+        <br />
+        By the way, the code that makes all this work is open and freely available.
+        <br />
+        Because of this, you can be certain that ShortcutMagic does not misuse the admin access.
+        <br />
+        <a target="_blank" href="https://github.com/codeluggage/ShortcutMagic">The code for ShortcutMagic - see how it all works!</a>
+        </i>
+        <br />
+        <img style={{
+          width: '450px',
+          height: '450px',
+        }} src="https://res.cloudinary.com/shortcutmagic/image/upload/v1498105564/wizard_x7n0am.png" alt="GifCommunity"/>
+        <br />
+        <br />
+        <br />
 
       </div>
 

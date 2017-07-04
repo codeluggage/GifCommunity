@@ -1,34 +1,31 @@
 import React from 'react';
 import { withCurrentUser, Loading } from 'meteor/vulcan:core';
 
-import Header from './common/Header.jsx'
-
 const WelcomeFlow = ({results = [], currentUser, loading, loadMore, count, totalCount}) => 
   
-  <div className="welcome-flow">
+  <div className="window-content" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    textAlign: 'center',
+  }}>
 
     {loading ? 
 
       <Loading /> :
-
-      <div className="welcome-flow-content">
-
-        Welcome!
+      <div>
+        <h2>Getting ShortcutMagic installed and set up the way you like it</h2>
         <br />
-        We will now install and set up ShortcutMagic on your computer. 
+        Installing ShortcutMagic is easy, but it requires administrative access. 
         <br />
-        ShortcutMagic requires some special permissions, so it is important
-        <br />
-        that you follow the instructions step by step. 
+        This is because it needs to read shortcuts from your programs.
         <br />
         <br />
-        If you have any problems, please reach out to matias@shortcutmagic.com so we can help you! 
+        If something does not work, please send en email to matias@shortcutmagic.com so I can help! 
         <br />
         <br />
-        <a href="/welcome-permissions">Next</a>
-
+        <a className="btn btn-primary" href="/welcome-permissions">Continue</a>
       </div>
-
     }
 
   </div>

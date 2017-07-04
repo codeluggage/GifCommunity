@@ -40,8 +40,6 @@ const Layout = ({children}) =>
       {children}
 
     </div>
-  
-    <div className="footer">&copy; GifCommunity</div>
 
   </div>
 
