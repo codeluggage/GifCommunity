@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import { Components, withCurrentUser, Loading } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
-import PicsNewForm from './pics/PicsNewForm';
-import PicsList from './pics/PicsList.jsx';
+import GifsNewForm from './gifs/GifsNewForm';
+import GifsList from './gifs/GifsList.jsx';
 
 // navigation bar component when the user is logged out
 
@@ -65,11 +65,11 @@ const LoginPage = ({ currentUser, loading }) => (
 
       <Loading /> :
 
-      <div className="pics-list-content">
+      <div className="gifs-list-content">
 
         {currentUser ? 
 
-          <PicsList currentUser={currentUser}/> : 
+          <GifsList currentUser={currentUser}/> : 
 
           <NavLoggedOut />
 

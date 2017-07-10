@@ -11,7 +11,7 @@ component (if the "component" prop is specified).
 import React, { PropTypes, Component } from 'react';
 import { Components, withCurrentUser } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
-import PicsNewForm from '../pics/PicsNewForm';
+import GifsNewForm from '../gifs/GifsNewForm';
 
 // navigation bar component when the user is logged in
 
@@ -33,7 +33,7 @@ const NavLoggedIn = ({currentUser}) =>
       </div>
 
       <Components.ModalTrigger label="Upload">
-        <PicsNewForm />
+        <GifsNewForm />
       </Components.ModalTrigger>
 
   </div>

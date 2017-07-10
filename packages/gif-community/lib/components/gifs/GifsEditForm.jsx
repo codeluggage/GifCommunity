@@ -1,24 +1,24 @@
 /* 
 
-A component to configure the "edit pic" form.
+A component to configure the "edit gif" form.
 
 */
 
 import React, { PropTypes, Component } from 'react';
 import { Components, registerComponent, getFragment } from "meteor/vulcan:core";
 
-import Pics from '../../modules/pics/collection.js';
+import Gifs from '../../modules/gifs/collection.js';
 
-const PicsEditForm = ({documentId, closeModal}) =>
+const GifsEditForm = ({documentId, closeModal}) =>
 
   <Components.SmartForm 
-    collection={Pics}
+    collection={Gifs}
     documentId={documentId}
-    mutationFragment={getFragment('PicsDetailsFragment')}
+    mutationFragment={getFragment('GifsDetailsFragment')}
     showRemove={true}
     successCallback={document => {
       closeModal();
     }}
   />
 
-export default PicsEditForm;
+export default GifsEditForm;

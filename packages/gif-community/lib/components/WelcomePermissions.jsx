@@ -5,7 +5,7 @@ import Header from './common/Header.jsx'
         // <br />
         // Watch the gif below to see what will happen: 
         // <br />
-        // <div className="pics-details-image">
+        // <div className="gifs-details-image">
         //   <img style={{
         //     width: '450px',
         //     height: '450px',

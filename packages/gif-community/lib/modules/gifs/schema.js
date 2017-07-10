@@ -45,11 +45,20 @@ const schema = {
       },
     }
   },
-  body: {
-    label: 'Body',
+  app: {
+    label: 'app',
+    type: String,
+    optional: false,
+    control: 'text',
+    viewableBy: ['guests'],
+    insertableBy: ['members'],
+    editableBy: ['members']
+  },
+  shortcut: {
+    label: 'shortcut',
     type: String,
     optional: true,
-    control: 'textarea', // use a textarea form component
+    control: 'text',
     viewableBy: ['guests'],
     insertableBy: ['members'],
     editableBy: ['members']

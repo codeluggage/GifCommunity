@@ -38,7 +38,7 @@ const schema = {
     insertableBy: ['members'],
     editableBy: ['members']
   },
-  picId: {
+  gifId: {
     type: String,
     viewableBy: ['guests'],
     insertableBy: ['members'],

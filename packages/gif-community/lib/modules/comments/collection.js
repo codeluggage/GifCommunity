@@ -32,14 +32,14 @@ const Comments = createCollection({
 
 Set a default results view whenever the Comments collection is queried:
 
-- Comments are limited to those corresponding to the current picture
+- Comments are limited to those corresponding to the current gifture
 - They're sorted by their createdAt timestamp in ascending order
 
 */
 
 Comments.addDefaultView(terms => {
   return {
-    selector: {picId: terms.picId},
+    selector: {gifId: terms.gifId},
     options: {sort: {createdAt: 1}}
   };
 });

@@ -1,6 +1,7 @@
 import { replaceComponent, Utils } from 'meteor/vulcan:core';
-import './pics/collection.js';
+import './gifs/collection.js';
 import './comments/collection.js';
+import './gifs/collection.js';
 
 import Layout from '../components/common/Layout.jsx';
 replaceComponent('Layout', Layout);

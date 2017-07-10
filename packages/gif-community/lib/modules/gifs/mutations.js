@@ -2,9 +2,9 @@
 
 Define the three default mutations:
 
-- new (e.g.: picsNew(document: picsInput) : Movie )
-- edit (e.g.: picsEdit(documentId: String, set: picsInput, unset: picsUnset) : Movie )
-- remove (e.g.: picsRemove(documentId: String) : Movie )
+- new (e.g.: gifsNew(document: gifsInput) : Movie )
+- edit (e.g.: gifsEdit(documentId: String, set: gifsInput, unset: gifsUnset) : Movie )
+- remove (e.g.: gifsRemove(documentId: String) : Movie )
 
 Each mutation has:
 
@@ -21,11 +21,11 @@ const mutations = {
 
   new: {
     
-    name: 'picsNew',
+    name: 'gifsNew',
     
     check(user) {
       if (!user) return false;
-      return Users.canDo(user, 'pics.new');
+      return Users.canDo(user, 'gifs.new');
     },
     
     mutation(root, {document}, context) {
@@ -33,7 +33,7 @@ const mutations = {
       Utils.performCheck(this, context.currentUser, document);
 
       return newMutation({
-        collection: context.Pics,
+        collection: context.Gifs,
         document: document, 
         currentUser: context.currentUser,
         validate: true,
@@ -45,20 +45,20 @@ const mutations = {
 
   edit: {
     
-    name: 'picsEdit',
+    name: 'gifsEdit',
     
     check(user, document) {
       if (!user || !document) return false;
-      return Users.owns(user, document) ? Users.canDo(user, 'pics.edit.own') : Users.canDo(user, `pics.edit.all`);
+      return Users.owns(user, document) ? Users.canDo(user, 'gifs.edit.own') : Users.canDo(user, `gifs.edit.all`);
     },
 
     mutation(root, {documentId, set, unset}, context) {
 
-      const document = context.Pics.findOne(documentId);
+      const document = context.Gifs.findOne(documentId);
       Utils.performCheck(this, context.currentUser, document);
 
       return editMutation({
-        collection: context.Pics, 
+        collection: context.Gifs, 
         documentId: documentId, 
         set: set, 
         unset: unset, 
@@ -72,20 +72,20 @@ const mutations = {
   
   remove: {
 
-    name: 'picsRemove',
+    name: 'gifsRemove',
     
     check(user, document) {
       if (!user || !document) return false;
-      return Users.owns(user, document) ? Users.canDo(user, 'pics.remove.own') : Users.canDo(user, `pics.remove.all`);
+      return Users.owns(user, document) ? Users.canDo(user, 'gifs.remove.own') : Users.canDo(user, `gifs.remove.all`);
     },
     
     mutation(root, {documentId}, context) {
 
-      const document = context.Pics.findOne(documentId);
+      const document = context.Gifs.findOne(documentId);
       Utils.performCheck(this, context.currentUser, document);
 
       return removeMutation({
-        collection: context.Pics, 
+        collection: context.Gifs, 
         documentId: documentId, 
         currentUser: context.currentUser,
         validate: true,

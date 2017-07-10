@@ -42,30 +42,30 @@ body{
   }
 }
 
-.pics-list-grid{
+.gifs-list-grid{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  .pics-item{
+  .gifs-item{
     width: 30%;
   }
 }
 
-.pics-item{
+.gifs-item{
   img{
     width: 100%;
   }
   position: relative;
   margin-bottom: 40px;
   &:hover{
-    .pics-meta{
+    .gifs-meta{
       opacity: 1;
       background: rgba(0,0,0,0.65);
     }
   }
   cursor: pointer;
 }
-.pics-meta{
+.gifs-meta{
   display: flex;
   opacity: 0;
   justify-content: center;
@@ -79,24 +79,24 @@ body{
   pointer-events: none;
 }
 
-.pics-comment-count{
+.gifs-comment-count{
 
 }
-.pics-image, .pics-details-image{
+.gifs-image, .gifs-details-image{
   img{
     display: block;
     width: 100%;
   }
 }
 
-.pics-details-modal{
+.gifs-details-modal{
   .modal-body{
     padding: 0;
   }
 }
-.pics-details{
+.gifs-details{
   display: flex;
-  .pics-info{
+  .gifs-info{
     border-bottom: 1px solid #EFEFEF;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -104,14 +104,14 @@ body{
       display: inline-block;
     }
   }
-  .pics-author{
+  .gifs-author{
     font-size: 16px;
     font-weight: bold;
   }
 }
 
 
-.pics-details-sidebar{
+.gifs-details-sidebar{
   width: 100%;
   max-width: 300px;
   padding: 20px;
@@ -177,7 +177,7 @@ body{
   }
 }
 
-.pics-list-footer{
+.gifs-list-footer{
   display: flex;
   justify-content: center;
 }

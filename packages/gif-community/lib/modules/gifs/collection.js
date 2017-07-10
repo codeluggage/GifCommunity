@@ -1,6 +1,6 @@
 /*
 
-The main Pics collection definition file.
+The main Gifs collection definition file.
 
 */
 
@@ -11,11 +11,11 @@ import './fragments.js';
 import mutations from './mutations.js';
 import './permissions.js';
 
-const Pics = createCollection({
+const Gifs = createCollection({
 
-  collectionName: 'Pics',
+  collectionName: 'Gifs',
 
-  typeName: 'Pic',
+  typeName: 'Gif',
 
   schema,
   
@@ -27,16 +27,16 @@ const Pics = createCollection({
 
 /*
 
-Set a default results view whenever the Pics collection is queried:
+Set a default results view whenever the Gifs collection is queried:
 
-- Pics are sorted by their createdAt timestamp in descending order
+- Gifs are sorted by their createdAt timestamp in descending order
 
 */
 
-Pics.addDefaultView(terms => {
+Gifs.addDefaultView(terms => {
   return {
     options: {sort: {createdAt: -1}}
   };
 });
 
-export default Pics;
+export default Gifs;

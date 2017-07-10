@@ -7,7 +7,7 @@ Register the GraphQL fragment used to query for data
 import { registerFragment } from 'meteor/vulcan:core';
 
 registerFragment(`
-  fragment PicsItemFragment on Pic {
+  fragment GifsItemFragment on Gif {
     _id
     createdAt
     userId
@@ -20,7 +20,7 @@ registerFragment(`
 `);
 
 registerFragment(`
-  fragment PicsDetailsFragment on Pic {
+  fragment GifsDetailsFragment on Gif {
     _id
     createdAt
     userId

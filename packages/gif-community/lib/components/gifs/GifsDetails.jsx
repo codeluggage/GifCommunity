@@ -6,14 +6,14 @@ Wrapped with the "withDocument" container.
 */
 
 import React, { PropTypes, Component } from 'react';
-import Pics from '../../modules/pics/collection.js';
+import Gifs from '../../modules/gifs/collection.js';
 import { Components, withDocument } from 'meteor/vulcan:core';
 import CommentsList from '../comments/CommentsList.jsx';
 import CommentsNewForm from '../comments/CommentsNewForm.jsx';
-import PicsEditForm from './PicsEditForm.jsx';
+import GifsEditForm from './GifsEditForm.jsx';
 import Comments from '../../modules/comments/collection.js';
 
-const PicsDetails = ({loading, document, currentUser}) => {
+const GifsDetails = ({loading, document, currentUser}) => {
 
   if (loading) {
   
@@ -23,23 +23,23 @@ const PicsDetails = ({loading, document, currentUser}) => {
   
     return (
 
-      <div className="pics-details">
+      <div className="gifs-details">
 
-        <div className="pics-details-image"><img src={document.imageUrl}/></div>
+        <div className="gifs-details-image"><img src={document.imageUrl}/></div>
         
-        <div className="pics-details-sidebar">
+        <div className="gifs-details-sidebar">
           
-          <div className="pics-info">
+          <div className="gifs-info">
           
-            <h4 className="pics-author">{document.user.displayName}</h4>
+            <h4 className="gifs-author">{document.user.displayName}</h4>
 
-            <div className="pics-body">
+            <div className="gifs-body">
 
               {document.body}
 
-              {Pics.options.mutations.edit.check(currentUser, document) ? 
+              {Gifs.options.mutations.edit.check(currentUser, document) ? 
                 <Components.ModalTrigger component={<Components.Icon name="edit"/>}>
-                  <PicsEditForm currentUser={currentUser} documentId={document._id} />
+                  <GifsEditForm currentUser={currentUser} documentId={document._id} />
                 </Components.ModalTrigger>
                 : null
               }
@@ -48,10 +48,10 @@ const PicsDetails = ({loading, document, currentUser}) => {
 
           </div>
 
-          <CommentsList terms={{view: 'picComments', picId: document._id}} />
+          <CommentsList terms={{view: 'gifComments', gifId: document._id}} />
         
           {Comments.options.mutations.new.check(currentUser) ?
-            <CommentsNewForm picId={document._id} /> :
+            <CommentsNewForm gifId={document._id} /> :
             null
           }
 
@@ -64,8 +64,8 @@ const PicsDetails = ({loading, document, currentUser}) => {
 }
 
 const options = {
-  collection: Pics,
-  fragmentName: 'PicsDetailsFragment',
+  collection: Gifs,
+  fragmentName: 'GifsDetailsFragment',
 };
 
-export default withDocument(options)(PicsDetails);
+export default withDocument(options)(GifsDetails);

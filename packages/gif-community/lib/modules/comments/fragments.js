@@ -14,7 +14,7 @@ registerFragment(`
     user {
       displayName
     }
-    picId
+    gifId
     body
   }
 `);
