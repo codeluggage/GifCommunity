@@ -33,7 +33,7 @@ const schema = {
   // custom properties
 
   imageUrl: {
-    label: 'Image URL',
+    label: 'Gif',
     type: String,
     viewableBy: ['guests'],
     insertableBy: ['members'],
@@ -46,7 +46,7 @@ const schema = {
     }
   },
   app: {
-    label: 'app',
+    label: 'App',
     type: String,
     optional: false,
     control: 'text',
@@ -55,7 +55,7 @@ const schema = {
     editableBy: ['members']
   },
   shortcut: {
-    label: 'shortcut',
+    label: 'Shortcut',
     type: String,
     optional: true,
     control: 'text',
