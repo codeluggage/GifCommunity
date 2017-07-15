@@ -14,7 +14,7 @@ const GifsItem = ({gif, currentUser}) =>
   <div className="gifs-item">
 
     <Components.ModalTrigger className="gifs-details-modal" component={<div className="gifs-image"><img src={gif.imageUrl}/></div>}>
-      <GifsDetail documentId={gif._id} currentUser={currentUser} />
+      <GifsDetail gifId={gif._id} currentUser={currentUser} />
     </Components.ModalTrigger>
 
     <div className="gifs-meta">

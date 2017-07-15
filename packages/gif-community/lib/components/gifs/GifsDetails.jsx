@@ -13,7 +13,7 @@ import CommentsNewForm from '../comments/CommentsNewForm.jsx';
 import GifsEditForm from './GifsEditForm.jsx';
 import Comments from '../../modules/comments/collection.js';
 
-const GifsDetails = ({loading, document, currentUser}) => {
+const GifsDetails = ({loading, gif, currentUser}) => {
 
   if (loading) {
   
@@ -25,21 +25,22 @@ const GifsDetails = ({loading, document, currentUser}) => {
 
       <div className="gifs-details">
 
-        <div className="gifs-details-image"><img src={document.imageUrl}/></div>
+        <div className="gifs-details-image"><img src={gif.imageUrl}/></div>
         
         <div className="gifs-details-sidebar">
           
           <div className="gifs-info">
           
-            <h4 className="gifs-author">{document.user.displayName}</h4>
+            <h4 className="gifs-author">{gif.user.displayName}</h4>
 
             <div className="gifs-body">
 
-              {document.body}
+              {gif.app}
+              {gif.shortcut}
 
-              {Gifs.options.mutations.edit.check(currentUser, document) ? 
+              {Gifs.options.mutations.edit.check(currentUser, gif) ? 
                 <Components.ModalTrigger component={<Components.Icon name="edit"/>}>
-                  <GifsEditForm currentUser={currentUser} documentId={document._id} />
+                  <GifsEditForm currentUser={currentUser} gifId={gif._id} />
                 </Components.ModalTrigger>
                 : null
               }
@@ -48,10 +49,10 @@ const GifsDetails = ({loading, document, currentUser}) => {
 
           </div>
 
-          <CommentsList terms={{view: 'gifComments', gifId: document._id}} />
+          <CommentsList terms={{view: 'gifComments', gifId: gif._id}} />
         
           {Comments.options.mutations.new.check(currentUser) ?
-            <CommentsNewForm gifId={document._id} /> :
+            <CommentsNewForm gifId={gif._id} /> :
             null
           }
 

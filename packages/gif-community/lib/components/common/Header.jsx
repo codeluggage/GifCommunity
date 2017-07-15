@@ -58,9 +58,9 @@ const Header = ({currentUser}) =>
 
     <div className="header">
       
-      <h1 className="logo">
-        <img src="http://res.cloudinary.com/shortcutmagic/image/upload/v1498105564/wizard_x7n0am.png" alt="GifCommunity"/>
-      </h1>
+    <img src="http://res.cloudinary.com/shortcutmagic/image/upload/t_media_lib_thumb/v1498105564/wizard_x7n0am.png" alt="GifCommunity"/>
+
+    <h2>Gif community</h2>
 
       {currentUser ? 
         <NavLoggedIn currentUser={currentUser}/> : 

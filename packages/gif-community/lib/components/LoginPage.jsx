@@ -6,6 +6,9 @@ import GifsList from './gifs/GifsList.jsx';
 
 // navigation bar component when the user is logged out
 
+
+  // <input type="text" id="serverInfo" ></input>
+
 const NavLoggedOut = ({currentUser}) => (
 
   <div className="header-logged-out" style={{
@@ -14,6 +17,7 @@ const NavLoggedOut = ({currentUser}) => (
       textAlign: 'center',
       flexDirection: 'column'
   }}>
+
 
       <h1 style={{
         flex: 1,

@@ -13,7 +13,7 @@ import './permissions.js';
 
 const Gifs = createCollection({
 
-  collectionName: 'Gifs',
+  collectionName: 'gifs',
 
   typeName: 'Gif',
 

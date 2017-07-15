@@ -21,6 +21,8 @@ dump/
 dump/*
 
 settings.json
+debug-settings.json
+production-settings.json
 settings.json.not-used
 .idea
 

@@ -18,8 +18,8 @@ const resolvers = {
     name: 'gifsList',
 
     resolver(root, {terms = {}}, context, info) {
-      let {selector, options} = context.Gifs.getParameters(terms, {}, context.currentUser);
-      return context.Gifs.find(selector, options).fetch();
+      let {selector, options} = context.gifs.getParameters(terms, {}, context.currentUser);
+      return context.gifs.find(selector, options).fetch();
     },
 
   },
@@ -28,9 +28,9 @@ const resolvers = {
     
     name: 'gifsSingle',
 
-    resolver(root, {documentId}, context) {
-      const document = context.Gifs.findOne({_id: documentId});
-      return context.Users.restrictViewableFields(context.currentUser, context.Gifs, document);
+    resolver(root, {gifId}, context) {
+      const document = context.gifs.findOne({_id: gifId});
+      return context.Users.restrictViewableFields(context.currentUser, context.gifs, document);
     },
   
   },
@@ -40,8 +40,8 @@ const resolvers = {
     name: 'gifsTotal',
     
     resolver(root, {terms = {}}, context) {
-      const {selector, options} = context.Gifs.getParameters(terms, {}, context.currentUser);
-      return context.Gifs.find(selector, options).count();
+      const {selector, options} = context.gifs.getParameters(terms, {}, context.currentUser);
+      return context.gifs.find(selector, options).count();
     },
   
   }

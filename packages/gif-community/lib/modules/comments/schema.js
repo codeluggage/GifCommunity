@@ -28,8 +28,6 @@ const schema = {
     resolveAs: 'user: User', // resolve as "user" on the client
   },
   
-  // custom properties
-
   body: {
     label: 'Body',
     placeholder: 'Add a comment…',
@@ -38,6 +36,7 @@ const schema = {
     insertableBy: ['members'],
     editableBy: ['members']
   },
+
   gifId: {
     type: String,
     viewableBy: ['guests'],

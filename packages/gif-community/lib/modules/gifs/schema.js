@@ -35,6 +35,7 @@ const schema = {
   imageUrl: {
     label: 'Gif',
     type: String,
+    optional: false,
     viewableBy: ['guests'],
     insertableBy: ['members'],
     editableBy: ['members'],

@@ -9,11 +9,11 @@ import { Components, registerComponent, getFragment } from "meteor/vulcan:core";
 
 import Gifs from '../../modules/gifs/collection.js';
 
-const GifsEditForm = ({documentId, closeModal}) =>
+const GifsEditForm = ({gifId, closeModal}) =>
 
   <Components.SmartForm 
     collection={Gifs}
-    documentId={documentId}
+    documentId={gifId}
     mutationFragment={getFragment('GifsDetailsFragment')}
     showRemove={true}
     successCallback={document => {

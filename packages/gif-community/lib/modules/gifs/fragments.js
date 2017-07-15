@@ -16,6 +16,8 @@ registerFragment(`
     }
     imageUrl
     commentsCount
+    app
+    shortcut
   }
 `);
 
@@ -29,6 +31,7 @@ registerFragment(`
     }
     imageUrl
     commentsCount
-    body
+    app
+    shortcut
   }
 `);
